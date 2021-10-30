@@ -106,19 +106,19 @@ if (modoCluster && cluster.isMaster) {
     })
 }
 
-// app.get('/info', (req, res) => {
-//     let informacion = {}
-//     informacion['Argumentos de entrada:'] = `${process.argv[2]} ${process.argv[3]} ${process.argv[4]}`
-//     informacion['Nombre de plataforma:'] = process.platform
-//     informacion['Version de Node:'] = process.version
-//     informacion['Uso de memoria:'] = process.memoryUsage()
-//     informacion['Path de ejecucion:'] = process.execPath
-//     informacion['Process id:'] = process.pid
-//     informacion['Carpeta corriente:'] = process.cwd()
-//     informacion['Numero de procesadores'] = numCPUs
-//     informacion['Puerto'] = process.argv[2]
-//     res.send(JSON.stringify(informacion, null, 4))
-// })
+app.get('/info', (req, res) => {
+    let informacion = {}
+    informacion['Argumentos de entrada:'] = `${process.argv[2]} ${process.argv[3]} ${process.argv[4]}`
+    informacion['Nombre de plataforma:'] = process.platform
+    informacion['Version de Node:'] = process.version
+    informacion['Uso de memoria:'] = process.memoryUsage()
+    informacion['Path de ejecucion:'] = process.execPath
+    informacion['Process id:'] = process.pid
+    informacion['Carpeta corriente:'] = process.cwd()
+    informacion['Numero de procesadores'] = numCPUs
+    informacion['Puerto'] = process.argv[2]
+    res.send(JSON.stringify(informacion, null, 4))
+})
 
 // app.get('/random', (req, res) => {
 //     const numeroRandom = fork('./api/numeroRandom.js')
